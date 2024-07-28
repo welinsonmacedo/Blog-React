@@ -1,3 +1,4 @@
+import ArticleList from "../../Components/Article_List/Article_List_Component"
 import Big_Card_Component from "../../Components/Big_Card/Big_Card_Component"
 import NavBar_Component from "../../Components/NavBar/NavBar_Component"
 import Small_Card_Component from "../../Components/Small_Card/Small_Card_Component"
@@ -9,18 +10,8 @@ const Page_Articles = () => {
 
 
     <Container id="Articles">
-      <NavBar_Component />
-      <ContainerCards>
-        <ContainerBigCard>
-          <Big_Card_Component />
-          <Big_Card_Component />
-        </ContainerBigCard>
-        <ContainerSmallCard>
-          <  Small_Card_Component />
-          <  Small_Card_Component />
-          <  Small_Card_Component />
-        </ContainerSmallCard>
-      </ContainerCards>
+    
+      <ArticleList/>
 
     </Container>
 

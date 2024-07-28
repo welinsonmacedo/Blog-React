@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 
  display:flex;
-
+padding-top: 4rem;
  flex-wrap:wrap;
  width:100%;
 `;

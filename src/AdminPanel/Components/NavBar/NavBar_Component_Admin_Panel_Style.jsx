@@ -18,9 +18,9 @@ export const Nav = styled.nav`
  
 `;
 
-export const Logo = styled.img`
-width:160px;
-border-radius: 10%;
+export const Logo = styled.h2`
+
+color: #3b5c79;
 `;
 
 export const Hamburger = styled.div`
