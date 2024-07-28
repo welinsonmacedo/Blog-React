@@ -49,7 +49,10 @@ const NavBar_Component = () => {
           <a href="/" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Home</a>
         </MenuItem>
         <MenuItem>
-          <a href="#" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Comunidade</a>
+          <Link to="/Articles" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Receitas</Link>
+        </MenuItem>
+        <MenuItem>
+        <Link to="/bookrecommendations" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Livros</Link>
         </MenuItem>
         <Dropdown>
           <DropdownButton style={{ color: theme.navBarTextColor }}>Projetos</DropdownButton>
@@ -63,7 +66,6 @@ const NavBar_Component = () => {
           <DropdownButton style={{ color: theme.navBarTextColor }}>Materiais</DropdownButton>
           <DropdownContent style={{ backgroundColor: theme.navBarColor }}>
             <Link to="/imccalculator" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Calcular IMC</Link>
-            <Link to="/bookrecommendations" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Livros</Link>
             <Link to="/admin" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>admin</Link>
             <a href="#" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Service 3</a>
           </DropdownContent>
