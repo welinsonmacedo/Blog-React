@@ -5,7 +5,7 @@ export const Container = styled.div`
  display:flex;
 padding-top: 4rem;
  flex-wrap:wrap;
- width:100%;
+ max-width:100%;
 `;
 export const ContainerCards = styled.div`
 margin-top: 20px;
@@ -15,14 +15,14 @@ padding-top: 3rem;
  flex-direction:row;
  flex-wrap:wrap;
  gap: 15px;
- width:100%;
+ max-width:100%;
  @media (max-width:768px) {
     width:100%;
   }
 `;
 export const ContainerSmallCard = styled.div`
 
- width: 40%;
+ max-width: 40%;
  @media (max-width: 768px) {
     display:block;
     margin: 0 auto;
@@ -31,7 +31,7 @@ export const ContainerSmallCard = styled.div`
 `;
 export const ContainerBigCard = styled.div`
 
- width:55%;
+ max-width:55%;
  @media (max-width: 768px) {
     display:block;
     margin: 0 auto;

@@ -9,7 +9,7 @@ const Page_Home = () => {
 
    <ContainerHome>
 
-    <img src="./logo.png" alt="" width={400} />
+    <img src="./logo.png" alt="" width={300} />
    </ContainerHome>
 
 

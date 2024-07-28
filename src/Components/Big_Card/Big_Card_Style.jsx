@@ -13,6 +13,7 @@ export const ContainerBigCard = styled.div`
   }
   @media (max-width: 768px) {
  flex-direction: column;
+ padding: 1rem;
    
   }
 `;
@@ -36,7 +37,7 @@ export const Date = styled.p`
  
 `;
 export const ImageMain = styled.img`
-  max-width: ${({ isContentVisible }) => (isContentVisible ? '100%' : '300px')};
+  max-width: ${({ isContentVisible }) => (isContentVisible ? '80%' : '300px')};
   min-width: 300px;
   object-fit: cover;
   transition: max-width 0.3s ease;
