@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { addDoc } from 'firebase/firestore';
 
 export const ContainerHome = styled.div`
+padding-top: 3rem;
 
- display:flex;
- padding-top: 5rem;
-justify-content: center;
- flex-wrap:wrap;
- width:100%;
+
+`;
+export const Title = styled.h1`
+font-variant: small-caps;
+color: #440d68;
 `;
 

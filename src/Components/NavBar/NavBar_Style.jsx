@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   justify-content: space-around;
   background-color: #ffffff;
   padding: 0 1rem;
-
+  z-index: 999;
   color: #000000;
   min-width: 100%;
   max-width: 100%;

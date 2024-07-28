@@ -37,8 +37,13 @@ export const Date = styled.p`
  
 `;
 export const ImageMain = styled.img`
-  max-width: ${({ isContentVisible }) => (isContentVisible ? '80%' : '300px')};
+  max-width: ${({ isContentVisible }) => (isContentVisible ? '100%' : '300px')};
   min-width: 300px;
   object-fit: cover;
   transition: max-width 0.3s ease;
+  @media (max-width: 768px) {
+    max-width:100%;
+    display:block;
+    margin:0 auto;   
+  }
 `;

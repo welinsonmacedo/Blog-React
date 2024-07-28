@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ContainerBigCard, Title, Date, ImageMain, TitlePreview, Content } from './Big_Card_Style';
 
-const Big_Card_Component = ({ article }) => {
-  const [isContentVisible, setIsContentVisible] = useState(false);
+const Big_Card_Component = ({ article  }) => {
+  const [isContentVisible, setIsContentVisible ] = useState(false);
 
   const toggleContentVisibility = () => {
     setIsContentVisible(!isContentVisible);
