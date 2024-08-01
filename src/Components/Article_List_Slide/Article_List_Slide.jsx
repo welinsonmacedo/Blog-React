@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../Config/Firebase/FirebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 import Big_Card_Component from '../Big_Card/Big_Card_Component';
-import { Container } from './Article_List_Slide_Style';
+import { Container,ContainerResponsivo } from './Article_List_Slide_Style';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -34,29 +34,11 @@ const ArticleListSlide = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true, // desabilita o autoplay se estiver causando problemas
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      }
-    ]
+    
   };
   return (
 
-<>
+<ContainerResponsivo>
 
 <Slider {...settings}>
       
@@ -67,7 +49,7 @@ const ArticleListSlide = () => {
       ))}
  
       </Slider >
-</>
+</ContainerResponsivo>
   
       
        

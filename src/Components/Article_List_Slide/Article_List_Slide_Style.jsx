@@ -7,4 +7,13 @@ export const Container = styled.div`
  max-width: 100%;
 
 `;
+export const ContainerResponsivo = styled.div`
+
+max-width: 90%;
+min-width: 90%;
+display: block;
+margin: 0 auto;
+
+`;
+
 
