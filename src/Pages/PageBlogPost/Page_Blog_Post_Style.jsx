@@ -2,12 +2,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 800px;
+  max-width: 90%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
+  padding-top: 110px;
+
   background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(8, 14, 51, 0.712);
 `;
 
 export const Title = styled.h1`

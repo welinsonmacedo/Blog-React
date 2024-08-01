@@ -17,9 +17,10 @@ const ArticleListSlide = () => {
         const articlesData = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data(),
-      
-      }))
-      setArticles(articlesData);} catch (error) {
+
+        }))
+        setArticles(articlesData);
+      } catch (error) {
         console.error('Error fetching articles:', error);
       }
     };
@@ -54,15 +55,19 @@ const ArticleListSlide = () => {
     ]
   };
   return (
-    
-        
-        <Slider {...settings}>
-        {articles.map((article, index) => (
-          <div key={article.id}>
+
+
+    <Slider {...settings}>
+      
+      {articles.map((article, index) => (
+        <Container key={article.id}>
           <Big_Card_Component article={article} />
-        </div>
-        ))}
-      </Slider>
+        </Container>
+      ))}
+ 
+      </Slider >
+      
+       
        
  
   );
