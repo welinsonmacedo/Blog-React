@@ -14,10 +14,12 @@ const ArticleListSlide = () => {
     const fetchArticles = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'articles'));
-        const articlesData = querySnapshot.docs.map(doc => doc.data());
-  
-        setArticles(articlesData);
-      } catch (error) {
+        const articlesData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+      
+      }))
+      setArticles(articlesData);} catch (error) {
         console.error('Error fetching articles:', error);
       }
     };
@@ -56,9 +58,9 @@ const ArticleListSlide = () => {
         
         <Slider {...settings}>
         {articles.map((article, index) => (
-          <div key={index}>
-            <Big_Card_Component article={article} />
-          </div>
+          <div key={article.id}>
+          <Big_Card_Component article={article} />
+        </div>
         ))}
       </Slider>
        

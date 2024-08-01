@@ -33,7 +33,7 @@ export const SubTitle = styled.h3`
  
 `;
 
-export const Date = styled.p`
+export const DateText = styled.p`
  
 `;
 export const ImageMain = styled.img`
