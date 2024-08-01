@@ -56,8 +56,9 @@ const ArticleListSlide = () => {
   };
   return (
 
+<>
 
-    <Slider {...settings}>
+<Slider {...settings}>
       
       {articles.map((article, index) => (
         <Container key={article.id}>
@@ -66,6 +67,8 @@ const ArticleListSlide = () => {
       ))}
  
       </Slider >
+</>
+  
       
        
        
