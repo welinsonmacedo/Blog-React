@@ -5,7 +5,7 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: space-around;
   background-color: #ffffff;
-  padding: 0 1rem;
+  
   z-index: 999;
   color: #000000;
   min-width: 100%;
@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   position: fixed;
   @media (max-width: 768px) {
    justify-content:space-between;
-   
+   padding: 0 1rem;
   }
  
 `;
