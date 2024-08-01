@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   position: fixed;
   @media (max-width: 768px) {
    justify-content:space-between;
-   padding: 0 1rem;
+   padding-right: 30px;
   }
  
 `;
