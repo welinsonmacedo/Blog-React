@@ -1,13 +1,37 @@
 import styled from 'styled-components';
-import { addDoc } from 'firebase/firestore';
 
 export const ContainerHome = styled.div`
 padding-top: 3rem;
 max-width:100%;
 
 `;
-export const Title = styled.h1`
-font-variant: small-caps;
-color: #440d68;
+export const ContainerSalution = styled.div`
+text-align: center;
+padding-top: 50px;
+width: 100%;
+
 `;
+export const TimeSalutation = styled.h3`
+  text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
+color: #a2cbf1;
+
+
+`;
+
+export const Title = styled.h2`
+ text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
+ color: #a2cbf1;
+   font-weight: 700;
+`;
+export const SubTitle = styled.h2`
+ text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
+ color: #a2cbf1;
+  font-weight: 700;
+`;
+export const Logo = styled.img`
+width: 20%;
+display: block;
+margin: 0 auto;
+`;
+
 

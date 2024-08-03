@@ -10,7 +10,6 @@ export const Nav = styled.nav`
   color: #000000;
   min-width: 100%;
   max-width: 100%;
-  border-bottom: 2px solid #7b8fc5ae;
   position: fixed;
   @media (max-width: 768px) {
    justify-content:space-between;
