@@ -25,6 +25,14 @@ export const Content = styled.div`
   color: #555;
   p {
     margin-bottom: 15px;
+    
+  }
+  img {
+    display: block;
+    margin: 0 auto; // Opcional: para centralizar as imagens
+  }
+  span{
+    color:red;
   }
 `;
 

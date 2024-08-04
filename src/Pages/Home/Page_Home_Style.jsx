@@ -18,7 +18,7 @@ color: #a2cbf1;
 
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
  text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
  color: #a2cbf1;
    font-weight: 700;

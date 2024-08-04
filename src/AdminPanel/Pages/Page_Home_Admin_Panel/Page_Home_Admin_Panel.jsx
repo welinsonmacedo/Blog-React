@@ -4,16 +4,17 @@ import NavBar_Component_Admin_Panel from './../../Components/NavBar/NavBar_Compo
 import ComponentSelector from "../../Components/Component_Selector/Component_Selector_Component";
 import ThemeConfigurator from "../../Components/Theme_Configurator/Theme_Configurator_Component";
 import CreateArticle from "../../Components/Create_Article/Create_Article_Component";
+import AddBook from "../../Components/AddBook/Add_Book_Component";
 
 
 const Page_Home_Admin_Panel = () => {
   return (
 
 
-   <ContainerHome>
-
-<CreateArticle/>
-   </ContainerHome>
+    <ContainerHome>
+      <CreateArticle />
+      <AddBook />
+    </ContainerHome>
 
 
 

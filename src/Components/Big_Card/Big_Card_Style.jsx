@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerBigCard = styled.div`
  padding: 2rem;
+ min-width: 80%;
  max-width:100%;
  display: flex;
  flex-direction: ${({ isContentVisible }) => (isContentVisible ? 'column-reverse' : 'row')};

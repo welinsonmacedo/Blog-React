@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
 export const ContainerBigCard = styled.div`
- padding: 0.5px;
- width:100%;
+ padding: 1.5px;
+ max-width:300px;
+ min-height:250px;
 cursor: pointer;
 &:hover {
-    box-shadow: 2px 2px 2px 2px #c9bfbf;
-    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #e9e6e6;
+    
   }
 `;
-export const Title = styled.h2`
-  color:#215c83;
+export const Title = styled.h3`
+  color:#161d22;
+  min-height:30px;
+  font-weight: 400;
 `;
 export const TitlePreview = styled.span`
  
@@ -23,7 +26,9 @@ export const Date = styled.p`
  
 `;
 export const ImageMain = styled.img`
- width: 100%;
+ min-width: 200px;
+ max-width: 200px;
  object-fit:cover;
- height: 200px;
+ min-height:200px;
+ max-height:200px;
 `;

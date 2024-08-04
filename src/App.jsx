@@ -10,6 +10,8 @@ import IMCCalculatorComponent from './Components/IMC_Calculator/IMC_Calculator_C
 import Page_Book_Recommendations from './Pages/Book_Recommendations/Page_Book_Recommendations';
 import Page_Home_Admin_Panel from './AdminPanel/Pages/Page_Home_Admin_Panel/Page_Home_Admin_Panel';
 import PageBlogPost from './Pages/PageBlogPost/Page_Blog_Post';
+import Footer from './Components/Footer/Footer_Component';
+import PageAbout from './Pages/About/Page_About';
 
 function App() {
   useEffect(() => {
@@ -38,7 +40,9 @@ function App() {
         <Route path="/admin" element={<Page_Home_Admin_Panel/>} />
         <Route path="*" element={<Page_Home />} />
         <Route path="/post/:id" element={<PageBlogPost/>} />
+        <Route path="/about" element={<PageAbout/>} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
