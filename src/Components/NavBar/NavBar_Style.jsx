@@ -42,6 +42,8 @@ export const Menu = styled.ul`
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     background-color: #e1edee;
     position: absolute;

@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterContent = styled.div`
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -18,6 +18,11 @@ export const FooterContent = styled.div`
 
 export const FooterLinks = styled.div`
   margin-bottom: 10px;
+  @media (max-width: 768px) {
+   display: flex;
+   flex-direction: column;
+   
+  }
 `;
 
 export const FooterLink = styled(Link)`

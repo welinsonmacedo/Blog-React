@@ -30,6 +30,7 @@ export const Content = styled.div`
   img {
     display: block;
     margin: 0 auto; // Opcional: para centralizar as imagens
+   max-width: 100%;
   }
   span{
     color:red;

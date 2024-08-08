@@ -56,7 +56,7 @@ const NavBar_Component = () => {
           <DropdownButton style={{ color: theme.navBarTextColor }}>Materiais</DropdownButton>
           <DropdownContent style={{ backgroundColor: theme.navBarColor }}>
             <Link to="/imccalculator" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Calcular IMC</Link>
-            <Link to="/admin" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Admin</Link>
+           
            
           </DropdownContent>
         </Dropdown>

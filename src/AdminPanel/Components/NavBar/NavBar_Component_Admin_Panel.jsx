@@ -23,27 +23,24 @@ const NavBar_Component_Admin_Panel = () => {
           <a href="/" onClick={closeMenu}>Meu Site</a>
         </MenuItem>
         <MenuItem>
-          <a href="#" onClick={closeMenu}>Modulos</a>
+          <a href="/admin/create-article" onClick={closeMenu}>Publicar</a>
         </MenuItem>
         <Dropdown>
           <DropdownButton>Configurações</DropdownButton>
           <DropdownContent>
-            <a href="#" onClick={closeMenu}>Service 1</a>
-            <a href="#" onClick={closeMenu}>Service 2</a>
-            <a href="#" onClick={closeMenu}>Service 3</a>
+            <a href="/admin/theme-configurator" onClick={closeMenu}>Tema</a>
+           
           </DropdownContent>
         </Dropdown>
         <Dropdown>
-          <DropdownButton>Temas</DropdownButton>
+          <DropdownButton>Outros</DropdownButton>
           <DropdownContent>
-            <Link to="/imccalculator" onClick={closeMenu}>Calcular IMC</Link>
-            <Link to="/bookrecommendations" onClick={closeMenu}>Livros</Link>
-            <a href="#" onClick={closeMenu}>Service 3</a>
+            <Link to="/admin/add-book" onClick={closeMenu}>Adicionar livro</Link>
+            <Link to="/admin/add-quote" onClick={closeMenu}>Adicionar Frases </Link>
+           
           </DropdownContent>
         </Dropdown>
-        <MenuItem>
-          <Link to="/Articles" onClick={closeMenu}>Publicar</Link>
-        </MenuItem>
+       
       </Menu>
     </Nav>
     </>

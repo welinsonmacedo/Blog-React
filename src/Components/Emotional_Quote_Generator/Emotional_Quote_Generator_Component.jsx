@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../Config/Firebase/FirebaseConfig'; // Certifique-se de que o caminho está correto
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -33,9 +34,10 @@ const EmotionalQuoteGenerator = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('https://type.fit/api/quotes');
-      const quotes = response.data;
-      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      const quotesCollection = collection(db, 'quotes'); // Nome da coleção no Firestore
+      const quotesSnapshot = await getDocs(quotesCollection);
+      const quotesList = quotesSnapshot.docs.map(doc => doc.data());
+      const randomQuote = quotesList[Math.floor(Math.random() * quotesList.length)];
       setQuote(randomQuote.text + ' — ' + randomQuote.author);
     } catch (error) {
       setError('Erro ao carregar a frase');

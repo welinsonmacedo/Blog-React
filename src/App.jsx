@@ -29,15 +29,16 @@ function App() {
     
     return () => unsubscribe();
   }, []);
+  const isAdminRoute = location.pathname.startsWith('/admin');
   return (
     <Router>
-         <NavBar_Component /> 
+      {!isAdminRoute && <NavBar_Component />}
       <Routes>
         <Route path="/" element={<Page_Home />} />
         <Route path="/articles" element={<Page_Articles />} />
         <Route path="/imccalculator" element={<IMCCalculatorComponent />} />
         <Route path="/bookrecommendations" element={<Page_Book_Recommendations />} />
-        <Route path="/admin" element={<Page_Home_Admin_Panel/>} />
+        <Route path="/admin/*" element={<Page_Home_Admin_Panel/>} />
         <Route path="*" element={<Page_Home />} />
         <Route path="/post/:id" element={<PageBlogPost/>} />
         <Route path="/about" element={<PageAbout/>} />

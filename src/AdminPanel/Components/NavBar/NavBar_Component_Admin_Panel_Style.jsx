@@ -13,6 +13,7 @@ export const Nav = styled.nav`
   position: fixed;
   @media (max-width: 768px) {
    justify-content:space-between;
+   align-items: center;
    
   }
  
@@ -42,6 +43,8 @@ export const Menu = styled.ul`
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     background-color: #e1edee;
     position: absolute;
@@ -84,7 +87,7 @@ export const DropdownContent = styled.div`
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-
+text-align: center;
   a {
     color: black;
     padding: 12px 16px;

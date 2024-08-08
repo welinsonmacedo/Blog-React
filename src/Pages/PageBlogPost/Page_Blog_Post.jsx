@@ -56,7 +56,7 @@ const PageBlogPost = () => {
       <ImageMain src={article.imageUrl}></ImageMain>
       <Content dangerouslySetInnerHTML={{ __html: article.content }} />
       <p><strong>Autor(a): </strong><p>{article.author}</p></p>
-      <p><strong>Referências:</strong><p>{article.references}</p></p>
+      <p><strong>Referências:</strong><a>{article.references}</a></p>
     </Container>
   );
 };
