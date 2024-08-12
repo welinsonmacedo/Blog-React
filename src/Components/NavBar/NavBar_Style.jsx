@@ -52,9 +52,9 @@ background-color:none;
     width: 100%;
     position: absolute;
     top: 40px;
-    left: 0;
-    padding: 10px;
     background-color: #ffff;
+    padding: 0;
+    margin: 12px 0;
   }
 `;
 
