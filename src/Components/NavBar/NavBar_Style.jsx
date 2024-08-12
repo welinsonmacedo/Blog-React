@@ -54,6 +54,7 @@ background-color:none;
     top: 40px;
     left: 0;
     padding: 10px;
+    background-color: #ffff;
   }
 `;
 
