@@ -6,6 +6,10 @@ export const Container = styled.div`
  justify-content: center;
  max-width: 100%;
 
+@media (max-width: 768px) {
+    padding: 15px;
+  
+}
 `;
 export const ContainerResponsivo = styled.div`
 

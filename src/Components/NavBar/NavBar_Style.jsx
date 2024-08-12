@@ -59,11 +59,27 @@ background-color:none;
 `;
 
 export const MenuItem = styled.li`
+
   a {
     color: #087ea1;
     text-decoration: none;
     font-weight: bold;
+    display: block;
+    width: 100%;
     &:hover {
+      color: #552e2e;
+      background-color: #c5e2d7;
+    }
+  }
+  @media (max-width: 768px) {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  a{
+    text-align: center;
+    padding: 5px;
+  }
+  &:hover {
       color: #552e2e;
     }
   }
@@ -76,12 +92,24 @@ export const Dropdown = styled.div`
   &:hover > div {
     display: block;
   }
+
 `;
 
 export const DropdownButton = styled.div`
   color: #087ea1;
   font-weight: bold;
   cursor: pointer;
+  @media (max-width: 768px) {
+ 
+ width: 100%;
+ a{
+   text-align: center;
+   padding: 5px;
+ }
+ &:hover {
+     color: #552e2e;
+   }
+ }
 `;
 
 export const DropdownContent = styled.div`
