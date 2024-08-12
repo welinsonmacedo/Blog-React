@@ -47,13 +47,14 @@ background-color:none;
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items:flex-start;
     width: 100%;
     position: absolute;
     top: 40px;
     background-color: #ffff;
-    padding: 0;
+    padding: 0 15px;
+  
     margin: 12px 0;
   }
 `;
@@ -73,10 +74,10 @@ export const MenuItem = styled.li`
   }
   @media (max-width: 768px) {
   display: block;
-  margin: 0 auto;
+ 
   width: 100%;
   a{
-    text-align: center;
+  
     padding: 5px;
   }
   &:hover {
