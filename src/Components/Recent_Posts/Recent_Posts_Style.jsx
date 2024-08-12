@@ -12,6 +12,12 @@ width: 80%; /* Define a largura do grid */
 margin: 0 auto;
 grid-template-columns: 33.3% 33.3% 33.3%;
 margin: 0 auto;
+@media (max-width: 768px) {
+   display   :flex ;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+  }
 `;
 export const Title = styled.h2`
 
