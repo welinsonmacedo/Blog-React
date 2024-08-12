@@ -78,4 +78,14 @@ export const ShareButtons = styled.div`
       background-color: #0056b3;
     }
   }
+  @media (max-width: 768px) {
+    max-width:100%;
+   display :flex ;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   button{
+    width: 60%;
+   }
+  }
 `;
