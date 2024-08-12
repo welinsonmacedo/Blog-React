@@ -61,3 +61,21 @@ export const ImageMain = styled.img`
     margin:0 auto;   
   }
 `;
+
+export const ShareButtons = styled.div`
+  margin-top: 20px;
+  
+  button {
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+`;

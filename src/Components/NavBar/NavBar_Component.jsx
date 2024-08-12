@@ -40,7 +40,10 @@ const NavBar_Component = () => {
 
   return (
     <Nav style={{ backgroundColor: theme.navBarColor, color: theme.navBarTextColor }}>
+      <a href="/home">
       <Logo src="./logoname.png" />
+      </a>
+     
       <Hamburger onClick={toggleMenu}>
         <FaBars />
       </Hamburger>

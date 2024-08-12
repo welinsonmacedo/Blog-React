@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../../Config/Firebase/FirebaseConfig'; // Substitua pelo caminho correto do seu arquivo de configuração do Firebase
 import { getDocs, collection } from 'firebase/firestore';
-import { Container, Title, Content, Loading, Error,ImageMain } from './Page_Blog_Post_Style';
+import { Container, Title, Content, Loading, Error, ImageMain, ShareButtons } from './Page_Blog_Post_Style';
 
 const PageBlogPost = () => {
   const { id } = useParams();
@@ -50,13 +50,40 @@ const PageBlogPost = () => {
     return <Error>Artigo não encontrado</Error>;
   }
 
+  // Funções para compartilhar
+  const shareOnWhatsApp = () => {
+    const url = `https://wa.me/?text=${encodeURIComponent(article.title)}%20${encodeURIComponent(window.location.href)}`;
+    window.open(url, '_blank');
+  };
+
+  const shareOnInstagram = () => {
+    const url = `https://www.instagram.com/`;
+    window.open(url, '_blank');
+  };
+
+  const shareOnFacebook = () => {
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+    window.open(url, '_blank');
+  };
+
+  const shareOnTwitter = () => {
+    const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <Container>
       <Title>{article.title}</Title>
-      <ImageMain src={article.imageUrl}></ImageMain>
+      <ImageMain src={article.imageUrl} alt={article.title} />
       <Content dangerouslySetInnerHTML={{ __html: article.content }} />
       <p><strong>Autor(a): </strong><p>{article.author}</p></p>
       <p><strong>Referências:</strong><a>{article.references}</a></p>
+      <ShareButtons>
+        <button onClick={shareOnWhatsApp}>Compartilhar no WhatsApp</button>
+        <button onClick={shareOnInstagram}>Compartilhar no Instagram</button>
+        <button onClick={shareOnFacebook}>Compartilhar no Facebook</button>
+        <button onClick={shareOnTwitter}>Compartilhar no Twitter</button>
+      </ShareButtons>
     </Container>
   );
 };

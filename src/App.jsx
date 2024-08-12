@@ -12,6 +12,7 @@ import Page_Home_Admin_Panel from './AdminPanel/Pages/Page_Home_Admin_Panel/Page
 import PageBlogPost from './Pages/PageBlogPost/Page_Blog_Post';
 import Footer from './Components/Footer/Footer_Component';
 import PageAbout from './Pages/About/Page_About';
+import Page_Login_Admin from './AdminPanel/Pages/Login_Admin/Page_Login_Admin';
 
 function App() {
   useEffect(() => {
@@ -29,7 +30,8 @@ function App() {
     
     return () => unsubscribe();
   }, []);
-  const isAdminRoute = location.pathname.startsWith('/admin');
+  const isAdminRoute = location.pathname.startsWith('/admin') || location.pathname.startsWith('/login');
+
   return (
     <Router>
       {!isAdminRoute && <NavBar_Component />}
@@ -42,8 +44,10 @@ function App() {
         <Route path="*" element={<Page_Home />} />
         <Route path="/post/:id" element={<PageBlogPost/>} />
         <Route path="/about" element={<PageAbout/>} />
+     
       </Routes>
-      <Footer/>
+      {!isAdminRoute && <Footer/>}
+   
     </Router>
   );
 }

@@ -4,7 +4,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import Big_Card_Component from '../Big_Card/Big_Card_Component';
 import { Container, Title,ContainerPosts } from './Recent_Posts_Style';
 import Small_Card_Component from './../Small_Card/Small_Card_Component';
-
+import { Navigate } from 'react-router-dom';
 const RecentPosts = () => {
     const [recentPosts, setRecentPosts] = useState([]);
 
@@ -18,7 +18,7 @@ const RecentPosts = () => {
                 }));
                 // Ordenar os artigos por data, do mais recente ao mais antigo e pegar os 3 primeiros
                 const sortedArticles = articlesData.sort((a, b) => new Date(b.date) - new Date(a.date));
-                const latestArticles = sortedArticles.slice(0, 3);
+                const latestArticles = sortedArticles.slice(0, 10);
                 setRecentPosts(latestArticles);
             } catch (error) {
                 console.error('Error fetching recent posts:', error);
@@ -26,7 +26,7 @@ const RecentPosts = () => {
         };
         fetchRecentPosts();
     }, []);
-
+   
     return (
         <Container>
             <Title>Posts Recentes</Title>
@@ -34,7 +34,7 @@ const RecentPosts = () => {
                 {recentPosts.map((post) => (
                     <div key={post.id}>
 
-                        <Small_Card_Component article={post} />
+                        <Small_Card_Component article={post}  />
 
                     </div>
                 ))}
