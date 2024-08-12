@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../../Config/Firebase/FirebaseConfig'; // Substitua pelo caminho correto do seu arquivo de configuração do Firebase
 import { getDocs, collection } from 'firebase/firestore';
-import { Container, Title, Content, Loading, Error, ImageMain, ShareButtons } from './Page_Blog_Post_Style';
+import { Container, Title, Content, Loading, Error, ImageMain, ShareButtons,Refer,Reference } from './Page_Blog_Post_Style';
 
 const PageBlogPost = () => {
   const { id } = useParams();
@@ -39,7 +39,7 @@ const PageBlogPost = () => {
   }, [id]);
 
   if (loading) {
-    return <Loading>Carregando...</Loading>;
+    return <Loading> Carregando...</Loading>;
   }
 
   if (error) {
@@ -76,8 +76,14 @@ const PageBlogPost = () => {
       <Title>{article.title}</Title>
       <ImageMain src={article.imageUrl} alt={article.title} />
       <Content dangerouslySetInnerHTML={{ __html: article.content }} />
-      <p><strong>Autor(a): </strong><p>{article.author}</p></p>
-      <p><strong>Referências:</strong><a>{article.references}</a></p>
+      <p><strong>Autor(a): </strong></p>
+      <Refer>{article.author}</Refer>
+      <p>
+        <strong>  Referências:</strong>
+        <Reference href={article.references} target="_blank" rel="noopener noreferrer">
+            Ver Referências
+        </Reference>
+      </p>
       <ShareButtons>
         <button onClick={shareOnWhatsApp}>Compartilhar no WhatsApp</button>
         <button onClick={shareOnInstagram}>Compartilhar no Instagram</button>

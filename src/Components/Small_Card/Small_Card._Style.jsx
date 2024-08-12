@@ -1,24 +1,28 @@
 import styled from 'styled-components';
 
 export const ContainerBigCard = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
  padding: 1.5px;
  max-width:300px;
  min-height:250px;
- 
+ text-align: center;
 cursor: pointer;
 &:hover {
-    box-shadow: 2px 2px 2px 2px #e9e6e6;
+    box-shadow: 2px 2px 2px 2px #6e363683;
     
   }
 `;
 export const Title = styled.h3`
   color:#161d22;
-  min-height:30px;
   font-weight: 400;
   max-width: 200px;
   max-height: 50px;
-  min-height: 50px;
-  align-content: center;
+  min-height: 10px;
+
+  text-align: center;
 `;
 export const TitlePreview = styled.span`
  
@@ -31,11 +35,11 @@ export const Date = styled.p`
  
 `;
 export const ImageMain = styled.img`
- min-width: 200px;
- max-width: 200px;
+ min-width: 100%;
+ max-width: 100%;
  object-fit:cover;
- min-height:200px;
- max-height:200px;
+ min-height:250px;
+ max-height:250px;
  display: block;
  margin: 0 auto;
 `;

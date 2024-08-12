@@ -18,6 +18,24 @@ export const Title = styled.h1`
   color: #333;
   text-align: center;
 `;
+export const Reference = styled.a`
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+export const Refer = styled.a`
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+  max-width: 100px;
+  text-size-adjust: auto;
+  cursor: pointer;
+`;
+
 
 export const Content = styled.div`
   font-size: 1.2rem;
@@ -49,8 +67,8 @@ export const Error = styled.p`
   color: red;
 `;
 export const ImageMain = styled.img`
-  max-width: ${({ isContentVisible }) => (isContentVisible ? '100%' : '300px')};
-  min-width: 300px;
+  max-width:100%;
+  min-width: auto;
   object-fit: cover;
   transition: max-width 0.3s ease;
   display: block;
