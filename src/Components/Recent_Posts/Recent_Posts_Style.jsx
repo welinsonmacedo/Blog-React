@@ -11,7 +11,8 @@ align-items: center;
 width: 80%; /* Define a largura do grid */
 margin: 0 auto;
 grid-template-columns: 33.3% 33.3% 33.3%;
-margin: 0 auto;
+margin-bottom: 25px;
+
 @media (max-width: 768px) {
    display   :flex ;
    flex-wrap: wrap;

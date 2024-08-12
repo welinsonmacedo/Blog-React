@@ -9,11 +9,12 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin: 20px 20px ;
 `;
 
 const Image = styled.img`
   width: 200px;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
   margin-bottom: 20px;
 `;
@@ -50,7 +51,7 @@ const EmotionalQuoteGenerator = () => {
   return (
     <Container>
       <Image
-        src="https://static.vecteezy.com/ti/vetor-gratis/p3/6619614-trevo-da-sorte-com-quatro-folhas-em-estilo-de-cartoon-isolado-em-fundo-branco-santo-dia-simbolo-decoracao-ilustracao-vetor.jpg"
+        src="/trevo.png"
         alt="Clique para gerar uma frase emocional"
         onClick={fetchQuote}
       />

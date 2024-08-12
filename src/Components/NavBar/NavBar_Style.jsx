@@ -4,10 +4,14 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #ffffff;
+background: rgb(187,245,235);
+background: -moz-radial-gradient(circle, rgba(187,245,235,1) 0%, rgba(255,255,255,1) 47%, rgba(78,235,122,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(187,245,235,1) 0%, rgba(255,255,255,1) 47%, rgba(78,235,122,1) 100%);
+background: radial-gradient(circle, rgba(187,245,235,1) 0%, rgba(255,255,255,1) 47%, rgba(78,235,122,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bbf5eb",endColorstr="#4eeb7a",GradientType=1);
   
   z-index: 999;
-  color: #000000;
+  color: #000;
   min-width: 100%;
   max-width: 100%;
   position: fixed;
@@ -38,14 +42,14 @@ export const Menu = styled.ul`
   display: flex;
   list-style: none;
   gap: 1rem;
-
+  padding: 1rem;
+background-color:none;  
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #e1edee;
     position: absolute;
     top: 40px;
     left: 0;
@@ -82,7 +86,7 @@ export const DropdownButton = styled.div`
 export const DropdownContent = styled.div`
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;

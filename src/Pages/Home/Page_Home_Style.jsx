@@ -13,19 +13,19 @@ width: 100%;
 `;
 export const TimeSalutation = styled.h3`
   text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
-color: #a2cbf1;
+color: #40a540;
 
 
 `;
 
 export const Title = styled.h1`
  text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
- color: #a2cbf1;
+ color: #447951;
    font-weight: 700;
 `;
 export const SubTitle = styled.h2`
  text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
- color: #a2cbf1;
+ color: #365845;
   font-weight: 700;
 `;
 export const Logo = styled.img`

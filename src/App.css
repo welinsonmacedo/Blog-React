@@ -3,5 +3,10 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
+    background: rgb(187,245,235);
+background: -moz-radial-gradient(circle, rgba(187,245,235,1) 0%, rgba(255,255,255,1) 47%, rgba(78,235,122,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(187,245,235,1) 0%, rgba(255,255,255,1) 47%, rgba(78,235,122,1) 100%);
+background: radial-gradient(circle, rgba(187,245,235,1) 0%, rgba(255,255,255,1) 47%, rgba(78,235,122,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bbf5eb",endColorstr="#4eeb7a",GradientType=1)
    
 }

@@ -47,7 +47,7 @@ const NavBar_Component = () => {
       <Hamburger onClick={toggleMenu}>
         <FaBars />
       </Hamburger>
-      <Menu isOpen={isOpen} style={{ backgroundColor: theme.navBarColor }}>
+      <Menu isOpen={isOpen} >
         <MenuItem>
           <a href="/" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Home</a>
         </MenuItem>
