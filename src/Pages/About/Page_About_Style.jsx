@@ -14,13 +14,19 @@ export const Title = styled.h1`
   font-size: 36px;
   margin-bottom: 10px;
   color: #5c0c57;
+
 `;
 
 export const Subtitle = styled.h2`
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
-  color: #405468;
+  color: #a261a8;
+  font-size: 2.5rem;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+   
+  }
 `;
 
 export const Content = styled.div`
@@ -31,15 +37,28 @@ export const Content = styled.div`
 `;
 
 export const Section = styled.div`
-  flex: 1;
-  min-width: 300px;
-  margin: 20px;
+
+  @media (max-width: 768px) {
+
+   
+  }
+`;
+export const SectionTitle = styled.div`
+ display: flex;
+ justify-content: center;
+  align-items: center;
+  gap: 100px;
+  @media (max-width: 768px) {
+ flex-direction: column;
+ padding: 1rem;
+ gap: 20px;
+   
+  }
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  border: none;
 `;
 
 export const Text = styled.p`

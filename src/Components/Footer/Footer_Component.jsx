@@ -6,10 +6,10 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <FooterLinks>
-          <FooterLink href="/">Home</FooterLink>
+          <FooterLink to="/">Home</FooterLink>
           <FooterLink to="/about">Sobre</FooterLink>
-          <FooterLink href="/contact">Contato</FooterLink>
-          <FooterLink href="/privacy">Política de Privacidade</FooterLink>
+          <FooterLink to="/contact">Contato</FooterLink>
+          <FooterLink to="/privacy">Política de Privacidade</FooterLink>
         </FooterLinks>
         <p>&copy; {new Date().getFullYear()} Welinson. Todos os direitos reservados.</p>
       </FooterContent>

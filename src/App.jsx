@@ -13,6 +13,8 @@ import PageBlogPost from './Pages/PageBlogPost/Page_Blog_Post';
 import Footer from './Components/Footer/Footer_Component';
 import PageAbout from './Pages/About/Page_About';
 import Page_Login_Admin from './AdminPanel/Pages/Login_Admin/Page_Login_Admin';
+import Page_Privacy_Policy from './Pages/PrivacyPolicy/Page_Privacy_Policy';
+import Page_Contact from './Pages/Contact/Page_Contact';
 
 function App() {
   useEffect(() => {
@@ -44,6 +46,8 @@ function App() {
         <Route path="*" element={<Page_Home />} />
         <Route path="/post/:id" element={<PageBlogPost/>} />
         <Route path="/about" element={<PageAbout/>} />
+        <Route path="/privacy" element={<Page_Privacy_Policy/>} />
+        <Route path="/contact" element={<Page_Contact/>} />
      
       </Routes>
       {!isAdminRoute && <Footer/>}
