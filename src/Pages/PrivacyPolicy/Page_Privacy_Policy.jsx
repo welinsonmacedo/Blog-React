@@ -2,7 +2,9 @@ import React from'react';
 import styled from'styled-components';
 
 const PrivacyContainer = styled.div`
+
   padding: 20px;
+  padding-top: 150px;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;

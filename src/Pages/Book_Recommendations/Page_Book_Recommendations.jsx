@@ -30,7 +30,7 @@ const BookItem = styled.li`
   border-bottom: 1px solid #ccc;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 45px;
   padding: 10px 0;
   &:last-child {
     border-bottom: none;
@@ -59,7 +59,20 @@ const BookAuthor = styled.p`
 const BookDescription = styled.p`
   margin: 0;
 `;
+const Button = styled.button`
+padding: 10px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 4px;
+font-size: 1em;
+margin-top: 20px;
+cursor: pointer;
 
+&:hover {
+  background-color: #0056b3;
+}
+`;
 const Page_Book_Recommendations = () => {
   const [books, setBooks] = useState([]);
 
@@ -90,6 +103,7 @@ const Page_Book_Recommendations = () => {
               <BookTitle>{book.title}</BookTitle>
               <BookAuthor> {book.author}</BookAuthor>
               <BookDescription>{book.description}</BookDescription>
+              <Button><a href={book.sale} style={{textDecoration:'none',color:'#fff'}}>Onde Comprar </a></Button>
             </div>
           </BookItem>
         ))}

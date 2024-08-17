@@ -8,20 +8,23 @@ const AddBook = () => {
   const [cover, setCover] = useState('');
   const [author, setAuthor] = useState('');
   const [description, setDescription] = useState('');
+  const [sale, setSale] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (title && cover && author && description) {
+    if (title && cover && author && description&& sale) {
       try {
         await addDoc(collection(db, 'livros'), {
           title,
           cover,
           author,
           description,
+          sale
         });
         setTitle('');
+        setSale('');
         setCover('');
         setAuthor('');
         setDescription('');
@@ -65,6 +68,12 @@ const AddBook = () => {
           placeholder="Descrição"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+        />
+           <Input
+          type="text"
+          placeholder="Link de Venda"
+          value={sale}
+          onChange={(e) => setSale(e.target.value)}
         />
         <Button type="submit">Adicionar Livro</Button>
       </Form>

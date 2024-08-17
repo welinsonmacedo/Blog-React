@@ -15,6 +15,7 @@ import PageAbout from './Pages/About/Page_About';
 import Page_Login_Admin from './AdminPanel/Pages/Login_Admin/Page_Login_Admin';
 import Page_Privacy_Policy from './Pages/PrivacyPolicy/Page_Privacy_Policy';
 import Page_Contact from './Pages/Contact/Page_Contact';
+import Emotional_Status from './Components/Emotional_Status/Emotional_Status_Component';
 
 function App() {
   useEffect(() => {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/about" element={<PageAbout/>} />
         <Route path="/privacy" element={<Page_Privacy_Policy/>} />
         <Route path="/contact" element={<Page_Contact/>} />
+        <Route path="/emotionalstatus" element={<Emotional_Status/>} />
      
       </Routes>
       {!isAdminRoute && <Footer/>}
