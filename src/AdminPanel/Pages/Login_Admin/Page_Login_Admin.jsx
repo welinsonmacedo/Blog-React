@@ -1,7 +1,8 @@
-import { text } from '@fortawesome/fontawesome-svg-core';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../Config/Firebase/FirebaseConfig'; // Importar o auth configurado
 
 const Container = styled.div`
   display: flex;
@@ -48,16 +49,39 @@ const Button = styled.button`
   }
 `;
 
-// Dados de login fixos para fins de exemplo (não recomendado para produção)
-const FIXED_USER = 'JOSI';
-const FIXED_PASSWORD = '1010';
+const Label = styled.label`
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+`;
+
+const RegisterLink = styled.p`
+  margin-top: 20px;
+  color: #007BFF;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 const Page_Login_Admin = ({ setIsLoggedIn }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [savePassword, setSavePassword] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+
+    // Carregar senha salva do localStorage, se existir
+    useEffect(() => {
+        const savedEmail = localStorage.getItem('savedEmail');
+        const savedPassword = localStorage.getItem('savedPassword');
+        if (savedEmail) setEmail(savedEmail);
+        if (savedPassword) setPassword(savedPassword);
+    }, []);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -65,18 +89,34 @@ const Page_Login_Admin = ({ setIsLoggedIn }) => {
         setError('');
 
         try {
-            // Verifica se o email e a senha inseridos são os mesmos que os valores fixos
-            if (email === FIXED_USER && password === FIXED_PASSWORD) {
-                setIsLoggedIn(true);
-                console.log('Login bem-sucedido');
-                localStorage.setItem('isLoggedIn', 'true');
-                navigate('/admin'); // Redireciona para a rota desejada após o login
+            // Realizar login com Firebase Auth
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            setIsLoggedIn(true);
+            console.log('Login bem-sucedido', userCredential.user);
+            localStorage.setItem('isLoggedIn', 'true');
+
+            // Salvar email/senha se o usuário escolher essa opção
+            if (savePassword) {
+                localStorage.setItem('savedEmail', email);
+                localStorage.setItem('savedPassword', password);
             } else {
-                throw new Error('Email ou senha incorretos');
+                localStorage.removeItem('savedEmail');
+                localStorage.removeItem('savedPassword');
             }
+
+            navigate('/admin/homePanel'); // Redireciona para a rota desejada após o login
         } catch (err) {
             console.error("Erro ao fazer login:", err);
-            setError('Erro ao fazer login. Verifique suas credenciais.');
+            // Adiciona mensagens de erro detalhadas
+            if (err.code === 'auth/invalid-email') {
+                setError('O email fornecido não é válido.');
+            } else if (err.code === 'auth/user-not-found') {
+                setError('Nenhum usuário encontrado com esse email.');
+            } else if (err.code === 'auth/wrong-password') {
+                setError('Senha incorreta.');
+            } else {
+                setError('Erro ao fazer login. Verifique suas credenciais.');
+            }
         } finally {
             setLoading(false);
         }
@@ -99,16 +139,37 @@ const Page_Login_Admin = ({ setIsLoggedIn }) => {
                     <div>
                         <label>Senha:</label>
                         <Input
-                            type="password"
+                            type={showPassword ? 'text' : 'password'}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
+                        <Label>
+                            <input
+                                type="checkbox"
+                                checked={showPassword}
+                                onChange={() => setShowPassword(!showPassword)}
+                            />
+                            Mostrar Senha
+                        </Label>
+                    </div>
+                    <div>
+                        <Label>
+                            <input
+                                type="checkbox"
+                                checked={savePassword}
+                                onChange={() => setSavePassword(!savePassword)}
+                            />
+                            Salvar senha
+                        </Label>
                     </div>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
                     <Button type="submit" disabled={loading}>
                         {loading ? 'Carregando...' : 'Entrar'}
                     </Button>
+                    <RegisterLink>
+                        <Link to="/admin/registerUser">Não tem uma conta? Crie uma agora</Link>
+                    </RegisterLink>
                 </form>
             </div>
         </Container>

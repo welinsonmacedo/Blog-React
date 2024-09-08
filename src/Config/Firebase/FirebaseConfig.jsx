@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyArimF0zBNuccpn3ooH14GLEs6XKq6o",
+  apiKey: "AIzaSyArimF0zBNuccpn3ooH14GLEs6XKq6uS6o",
   authDomain: "blogweb-5fb24.firebaseapp.com",
   projectId: "blogweb-5fb24",
   storageBucket: "blogweb-5fb24.appspot.com",

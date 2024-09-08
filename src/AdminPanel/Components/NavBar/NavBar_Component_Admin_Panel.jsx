@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Nav, Logo, Hamburger, Menu, MenuItem, Dropdown, DropdownButton, DropdownContent } from './NavBar_Component_Admin_Panel_Style';
 import { Link } from 'react-router-dom';
+import UserProfile from '../UserProfile/User_Profile_Component';
 const NavBar_Component_Admin_Panel = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +15,8 @@ const NavBar_Component_Admin_Panel = () => {
   return (
     <>
      <Nav>
-      <Logo >PanelAdmin</Logo>
+      <Logo >{UserProfile}</Logo>
+      <UserProfile/>
       <Hamburger onClick={toggleMenu}>
         <FaBars />
       </Hamburger>

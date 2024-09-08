@@ -172,7 +172,7 @@ const IMCCalculatorComponent = () => {
             onChange={(e) => setAltura(e.target.value)}
           />
         </Label>
-        <Button onClick={calcularIMC}>Calcular IMC</Button>
+        <Button onClick={calcularIMC}>Calcular IMC</Button> 
         {imc && (
           <ContainerMessage>
             <MessageIMC>{imc}</MessageIMC>

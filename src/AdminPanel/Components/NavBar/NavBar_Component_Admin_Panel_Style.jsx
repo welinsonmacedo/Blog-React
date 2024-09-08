@@ -4,9 +4,9 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #ffffff;
+  background-color: #ffffff0;
   padding: 0 1rem;
-
+margin-bottom: 5rem;
   color: #000000;
   min-width: 100%;
   border-bottom: 2px solid #7b8fc5ae;

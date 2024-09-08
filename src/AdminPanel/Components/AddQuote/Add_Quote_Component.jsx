@@ -10,6 +10,8 @@ const Container = styled.div`
   justify-content: center;
   padding: 20px;
   padding-top: 5rem;
+  padding-top: 5rem;
+  margin-top: 5rem;
 `;
 
 const Form = styled.form`

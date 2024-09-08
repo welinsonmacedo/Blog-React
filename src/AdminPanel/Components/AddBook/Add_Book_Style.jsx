@@ -8,6 +8,8 @@ export const Container = styled.div`
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 5rem;
+  margin-top: 5rem;
 `;
 
 export const Form = styled.form`

@@ -10,6 +10,8 @@ const Container = styled.div`
   max-width: 400px;
   margin: 0 auto;
   background-color: #f9f9f9;
+  padding-top: 5rem;
+  margin-top: 5rem;
 `;
 
 const Heading = styled.h2`

@@ -10,6 +10,8 @@ const Form = styled.form`
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  padding-top: 5rem;
+  margin-top: 5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background-color: #fff;
