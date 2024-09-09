@@ -18,6 +18,10 @@ const Image = styled.img`
   border-radius: 10%;
   cursor: pointer;
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+ flex-direction: column;
+width:150px;
+  }
 `;
 
 const Quote = styled.p`

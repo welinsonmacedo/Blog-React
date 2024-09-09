@@ -12,12 +12,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bbf5eb",endCo
   
   z-index: 999;
   color: #000;
-  min-width: 100%;
+
   max-width: 100%;
  
   @media (max-width: 768px) {
    justify-content:space-between;
-   padding-right: 30px;
+
   }
  
 `;
@@ -25,6 +25,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bbf5eb",endCo
 export const Logo = styled.img`
 width:160px;
 border-radius: 10%;
+@media (max-width: 768px) {
+  width:100px;
+  }
 `;
 
 export const Hamburger = styled.div`
@@ -34,7 +37,7 @@ export const Hamburger = styled.div`
   
   @media (max-width: 768px) {
     display: block;
-    margin-right: 25px;
+    padding: 5px;
   }
 `;
 
@@ -42,7 +45,7 @@ export const Menu = styled.ul`
   display: flex;
   list-style: none;
   gap: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
 background-color:none;  
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};

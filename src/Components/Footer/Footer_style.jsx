@@ -40,5 +40,12 @@ width: 50px;
 export const ContainerLogo = styled.div`
 display: flex;
 align-items: center;
+flex-wrap: wrap;
+@media (max-width: 768px) {
+   display: flex;
+   flex-direction: column;
+   
+  }
+
 `;
 

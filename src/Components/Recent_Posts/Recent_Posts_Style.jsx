@@ -18,6 +18,7 @@ margin-bottom: 25px;
    flex-wrap: wrap;
    justify-content: center;
    align-items: center;
+   width: 90%;
   }
 `;
 export const Title = styled.h2`

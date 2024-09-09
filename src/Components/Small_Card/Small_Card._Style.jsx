@@ -42,4 +42,8 @@ export const ImageMain = styled.img`
  max-height:250px;
  display: block;
  margin: 0 auto;
+ @media (max-width: 768px) {
+  min-width: 300px;
+ max-width: 300px;
+  }
 `;

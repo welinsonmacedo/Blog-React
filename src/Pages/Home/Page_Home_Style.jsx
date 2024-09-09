@@ -22,11 +22,17 @@ export const Title = styled.h1`
  text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
  color: #447951;
    font-weight: 700;
+   @media (max-width: 768px) {
+   font-size: 20px;
+  }
 `;
 export const SubTitle = styled.h2`
  text-shadow: 2px 2px 4px rgba(233, 221, 221, 0.726);
  color: #365845;
   font-weight: 700;
+  @media (max-width: 768px) {
+   font-size: 20px;
+  }
 `;
 export const Logo = styled.img`
 width: 20%;
