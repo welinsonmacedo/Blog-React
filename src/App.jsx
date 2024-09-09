@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import {db,auth} from './Config/Firebase/FirebaseConfig'
+import { db, auth } from './Config/Firebase/FirebaseConfig'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavBar_Component from './Components/NavBar/NavBar_Component';
@@ -17,6 +17,7 @@ import Page_Privacy_Policy from './Pages/PrivacyPolicy/Page_Privacy_Policy';
 import Page_Contact from './Pages/Contact/Page_Contact';
 import Emotional_Status from './Components/Emotional_Status/Emotional_Status_Component';
 import ReactGA from 'react-ga';
+import CertificationsList from './Pages/CertificationsList/Certifications_List';
 const TRACKING_ID = "G-8HYX75WEM7";
 function App() {
   useEffect(() => {
@@ -24,8 +25,8 @@ function App() {
     ReactGA.pageview(window.location.pathname + window.location.search); // Rastreia a visualização da página
   }, []);
   useEffect(() => {
-    
-    
+
+
 
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
@@ -35,31 +36,37 @@ function App() {
       }
     });
 
-    
+
     return () => unsubscribe();
   }, []);
   const isAdminRoute = location.pathname.startsWith('/admin') || location.pathname.startsWith('/login');
 
   return (
+
     <Router>
       {!isAdminRoute && <NavBar_Component />}
-      <Routes>
-        <Route path="/" element={<Page_Home />} />
-        <Route path="/articles" element={<Page_Articles />} />
-        <Route path="/imccalculator" element={<IMCCalculatorComponent />} />
-        <Route path="/bookrecommendations" element={<Page_Book_Recommendations />} />
-        <Route path="/admin/*" element={<Page_Home_Admin_Panel/>} />
-        <Route path="*" element={<Page_Home />} />
-        <Route path="/post/:id" element={<PageBlogPost/>} />
-        <Route path="/about" element={<PageAbout/>} />
-        <Route path="/privacy" element={<Page_Privacy_Policy/>} />
-        <Route path="/contact" element={<Page_Contact/>} />
-        <Route path="/emotionalstatus" element={<Emotional_Status/>} />
-     
-      </Routes>
-      {!isAdminRoute && <Footer/>}
-   
+      <div id='container'>
+        <Routes>
+          <Route path="/" element={<Page_Home />} />
+          <Route path="/articles" element={<Page_Articles />} />
+          <Route path="/imccalculator" element={<IMCCalculatorComponent />} />
+          <Route path="/bookrecommendations" element={<Page_Book_Recommendations />} />
+          <Route path="/admin/*" element={<Page_Home_Admin_Panel />} />
+          <Route path="*" element={<Page_Home />} />
+          <Route path="/post/:id" element={<PageBlogPost />} />
+          <Route path="/about" element={<PageAbout />} />
+          <Route path="/privacy" element={<Page_Privacy_Policy />} />
+          <Route path="/contact" element={<Page_Contact />} />
+          <Route path="/emotionalstatus" element={<Emotional_Status />} />
+          <Route path="/certificationsList" element={<CertificationsList />} />
+
+        </Routes>
+      </div>
+      {!isAdminRoute && <Footer />}
+
     </Router>
+
+
   );
 }
 

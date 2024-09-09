@@ -39,6 +39,7 @@ const NavBar_Component_Admin_Panel = () => {
           <DropdownContent>
             <Link to="/admin/add-book" onClick={closeMenu}>Adicionar livro</Link>
             <Link to="/admin/add-quote" onClick={closeMenu}>Adicionar Frases </Link>
+            <Link to="/admin/add-certifications" onClick={closeMenu}>Adicionar Certificados </Link>
            
           </DropdownContent>
         </Dropdown>

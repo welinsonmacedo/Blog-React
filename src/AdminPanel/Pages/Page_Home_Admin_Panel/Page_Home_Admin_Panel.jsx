@@ -12,6 +12,7 @@ import LoginComponent from '../../Pages/Login_Admin/Page_Login_Admin';
 import Page_Register_Admin from '../Register_Admin/Page_Register_Admin';
 import PrivateRoute from '../../Context/PrivateRoute';
 import UserProfile from '../../Components/UserProfile/User_Profile_Component';
+import CertificationsAndCoursesForm from '../../Components/CertificationsAndCoursesForm/Certifications_And_Courses_Form';
 
 const Page_Home_Admin_Panel = () => {
   return (
@@ -27,6 +28,7 @@ const Page_Home_Admin_Panel = () => {
         <Route path="/create-article" element={<PrivateRoute element={<CreateArticle />} />} />
         <Route path="/add-book" element={<PrivateRoute element={<AddBook />} />} />
         <Route path="/add-quote" element={<PrivateRoute element={<AddQuoteComponent />} />} />
+        <Route path="/add-certifications" element={<PrivateRoute element={<CertificationsAndCoursesForm />} />} />
       </Routes>
     </ContainerHome>
   );

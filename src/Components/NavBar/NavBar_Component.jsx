@@ -51,7 +51,12 @@ const NavBar_Component = () => {
         <MenuItem>
           <a href="/" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Home</a>
         </MenuItem>
-       
+        <MenuItem>
+        <Link to="/about" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Sobre </Link>
+        </MenuItem>
+        <MenuItem>
+        <Link to="/certificationsList" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Certificados</Link>
+        </MenuItem>
         <MenuItem>
         <Link to="/bookrecommendations" onClick={closeMenu} style={{ color: theme.navBarTextColor }}>Livros</Link>
         </MenuItem>

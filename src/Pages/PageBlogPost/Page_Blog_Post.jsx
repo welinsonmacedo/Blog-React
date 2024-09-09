@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../../Config/Firebase/FirebaseConfig'; // Substitua pelo caminho correto do seu arquivo de configuração do Firebase
 import { getDocs, collection } from 'firebase/firestore';
-import { Container, Title, Content, Loading, Error, ImageMain, ShareButtons,Refer,Reference } from './Page_Blog_Post_Style';
+import { Container, Title, Content, Loading, Error, ImageMain, ShareButtons, Refer, Reference } from './Page_Blog_Post_Style';
+import { FaWhatsapp, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa'; // Importa os ícones
 
 const PageBlogPost = () => {
   const { id } = useParams();
@@ -85,10 +86,10 @@ const PageBlogPost = () => {
         </Reference>
       </p>
       <ShareButtons>
-        <button onClick={shareOnWhatsApp}>Compartilhar no WhatsApp</button>
-        <button onClick={shareOnInstagram}>Compartilhar no Instagram</button>
-        <button onClick={shareOnFacebook}>Compartilhar no Facebook</button>
-        <button onClick={shareOnTwitter}>Compartilhar no Twitter</button>
+        <button onClick={shareOnWhatsApp}><FaWhatsapp size={24} /></button>
+        <button onClick={shareOnInstagram}><FaInstagram size={24} /></button>
+        <button onClick={shareOnFacebook}><FaFacebook size={24} /></button>
+        <button onClick={shareOnTwitter}><FaTwitter size={24} /></button>
       </ShareButtons>
     </Container>
   );

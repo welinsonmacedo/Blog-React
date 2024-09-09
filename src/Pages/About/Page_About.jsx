@@ -9,6 +9,7 @@ import {
   Text,
   SectionTitle
 } from './Page_About_Style';
+import CertificationsList from '../CertificationsList/Certifications_List';
 
 const PageAbout = () => {
   const containerRef = useRef(null);
@@ -44,6 +45,7 @@ const PageAbout = () => {
           </Text>
         </Section>
       </Content>
+      <CertificationsList/>
     </Container>
   );
 };
