@@ -16,8 +16,13 @@ import Page_Login_Admin from './AdminPanel/Pages/Login_Admin/Page_Login_Admin';
 import Page_Privacy_Policy from './Pages/PrivacyPolicy/Page_Privacy_Policy';
 import Page_Contact from './Pages/Contact/Page_Contact';
 import Emotional_Status from './Components/Emotional_Status/Emotional_Status_Component';
-
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-8HYX75WEM7";
 function App() {
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search); // Rastreia a visualização da página
+  }, []);
   useEffect(() => {
     
     
