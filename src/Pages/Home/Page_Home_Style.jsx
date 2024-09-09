@@ -35,3 +35,7 @@ margin: 0 auto;
 `;
 
 
+export const Image = styled.img`
+  width: 300px;
+  border: none;
+`;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../Config/Firebase/FirebaseConfig'; // Certifique-se de que o caminho está correto
 import styled from 'styled-components';
@@ -10,6 +10,7 @@ const Container = styled.div`
   justify-content: center;
   padding: 20px;
   margin: 20px 20px ;
+  cursor: pointer;
 `;
 
 const Image = styled.img`
@@ -30,8 +31,13 @@ const EmotionalQuoteGenerator = () => {
   const [quote, setQuote] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [quoteVisible, setQuoteVisible] = useState(false);
+  const timerRef = useRef(null); // Para armazenar o timer
 
   const fetchQuote = async () => {
+    // Se a frase já está visível, não faz nada
+    if (quoteVisible) return;
+
     setLoading(true);
     setError(null);
     try {
@@ -40,6 +46,11 @@ const EmotionalQuoteGenerator = () => {
       const quotesList = quotesSnapshot.docs.map(doc => doc.data());
       const randomQuote = quotesList[Math.floor(Math.random() * quotesList.length)];
       setQuote(randomQuote.text + ' — ' + randomQuote.author);
+      setQuoteVisible(true); // Mostrar a frase
+      // Iniciar temporizador para ocultar a frase após 20 segundos
+      timerRef.current = setTimeout(() => {
+        setQuoteVisible(false);
+      }, 10000);
     } catch (error) {
       setError('Erro ao carregar a frase');
       console.error('Error fetching quote:', error);
@@ -48,16 +59,21 @@ const EmotionalQuoteGenerator = () => {
     }
   };
 
+  // Limpar o temporizador se o componente for desmontado
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current);
+  }, []);
+
   return (
-    <Container>
+    <Container onClick={fetchQuote}>
       <Image
         src="/trevo.png"
         alt="Clique para gerar uma frase emocional"
-        onClick={fetchQuote}
       />
       {loading && <Quote>Carregando...</Quote>}
       {error && <Quote>{error}</Quote>}
-      {!loading && !error && quote && <Quote>{quote}</Quote>}
+      {!loading && !error && quoteVisible && <Quote>{quote}</Quote>}
+      <p>Clique e motive seu dia!</p>
     </Container>
   );
 };

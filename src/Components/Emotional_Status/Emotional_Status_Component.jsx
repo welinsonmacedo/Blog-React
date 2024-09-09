@@ -4,7 +4,7 @@ import styled from'styled-components';
 const MoodContainer = styled.div`
 
   padding: 20px;
-  padding-top: 150px;
+
   max-width: 600px;
   margin: 0 auto;
   background-color: #f9f9f9;
@@ -53,6 +53,7 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 1em;
+  width: 100%;
   cursor: pointer;
   
   &:hover {

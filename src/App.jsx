@@ -18,6 +18,7 @@ import Page_Contact from './Pages/Contact/Page_Contact';
 import Emotional_Status from './Components/Emotional_Status/Emotional_Status_Component';
 import ReactGA from 'react-ga';
 import CertificationsList from './Pages/CertificationsList/Certifications_List';
+import ScrollToTop from './Components/ScrollToTop/Scroll_To_Top';
 const TRACKING_ID = "G-8HYX75WEM7";
 function App() {
   useEffect(() => {
@@ -61,6 +62,7 @@ function App() {
           <Route path="/certificationsList" element={<CertificationsList />} />
 
         </Routes>
+        <ScrollToTop/>
       </div>
       {!isAdminRoute && <Footer />}
 

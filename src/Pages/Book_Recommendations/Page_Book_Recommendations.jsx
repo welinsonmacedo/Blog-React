@@ -5,7 +5,7 @@ import { collection, getDocs } from 'firebase/firestore';
 
 const Container = styled.div`
   padding: 20px;
-  padding-top: 100px;
+
   max-width: 800px;
   margin: 0 auto;
   border: 1px solid #ddd;

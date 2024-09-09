@@ -8,7 +8,7 @@ export const Container = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.1);
   margin-bottom: 20px;
-  padding-top: 150px;
+ 
 `;
 
 export const Title = styled.h1`

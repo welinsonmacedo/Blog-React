@@ -5,11 +5,10 @@ export const Container = styled.div`
   max-width: 90%;
   margin: 0 auto;
   padding: 15px;
-  padding-top: 110px;
-
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(8, 14, 51, 0.712);
+  margin-bottom: 50px;
 `;
 
 export const Title = styled.h1`

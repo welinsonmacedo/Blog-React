@@ -34,3 +34,11 @@ export const FooterLink = styled(Link)`
     text-decoration: underline;
   }
 `;
+export const Logo = styled.img`
+width: 50px;
+`;
+export const ContainerLogo = styled.div`
+display: flex;
+align-items: center;
+`;
+
