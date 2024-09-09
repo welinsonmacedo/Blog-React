@@ -16,7 +16,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bbf5eb",endCo
   max-width: 100%;
  
   @media (max-width: 768px) {
-   justify-content:space-between;
+   justify-content:space-around;
 
   }
  

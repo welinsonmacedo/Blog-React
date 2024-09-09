@@ -17,7 +17,10 @@ export const ContainerBigCard = styled.div`
  padding: 0.5rem;
  min-width: 100%;
  max-width:100%;
- box-shadow: none;
+ &:hover {
+    box-shadow: none;
+   
+  }
   }
 `;
 export const Title = styled.h1`
@@ -55,8 +58,9 @@ export const ImageMain = styled.img`
   object-fit: cover;
   transition: max-width 0.3s ease;
   @media (max-width: 768px) {
-    width:150px;
+    width:100%;
     display:block;
-    margin:0 auto;   
+    margin: 0 auto;
+   
   }
 `;

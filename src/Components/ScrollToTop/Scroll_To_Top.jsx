@@ -23,6 +23,11 @@ const ScrollButton = styled.button`
   &:hover {
     background-color: #555;
   }
+  @media (max-width: 768px) {
+ 
+    
+   
+  }
 `;
 
 const ArrowUp = styled(FaArrowUp)`

@@ -7,7 +7,6 @@ max-width:100%;
 `;
 export const ContainerSalution = styled.div`
 text-align: center;
-padding-top: 50px;
 width: 100%;
 
 `;
@@ -44,4 +43,8 @@ margin: 0 auto;
 export const Image = styled.img`
   width: 300px;
   border: none;
+  @media (max-width: 768px) {
+    width: 250px;
+
+  }
 `;
