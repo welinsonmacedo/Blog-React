@@ -34,11 +34,7 @@ const   Page_Privacy_Policy = () => {
         Esta Política de Privacidade descreve como as suas informações pessoais são coletadas, usadas e compartilhadas
         quando você visita o nosso blog.
       </Paragraph><SectionTitle>Informações que Coletamos</SectionTitle><Paragraph>
-        Quando você visita o blog, automaticamente coletamos certas informações sobre o seu dispositivo, incluindo
-        informações sobre o seu navegador, endereço IP, fuso horário e alguns dos cookies que estão instalados em seu
-        dispositivo. Além disso, conforme você navega pelo blog, coletamos informações sobre as páginas ou produtos que
-        você visualiza, quais sites ou termos de busca o encaminharam ao blog, e informações sobre como você interage
-        com o blog.
+        Ao Navegar em nosso Blog , não coletamos informações.
       </Paragraph><SectionTitle>Como Usamos Suas Informações</SectionTitle><Paragraph>
         Usamos as informações coletadas para ajudar a melhorar a experiência do usuário no blog, personalizar o
         conteúdo e realizar análises sobre o uso do blog. Não compartilhamos suas informações pessoais com terceiros,

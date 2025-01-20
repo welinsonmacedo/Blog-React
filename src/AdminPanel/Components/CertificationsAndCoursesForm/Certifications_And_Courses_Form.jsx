@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { db } from '../../../Config/Firebase/FirebaseConfig'; // Substitua pelo caminho correto do seu arquivo FirebaseConfig
+import { db, storage } from '../../../Config/Firebase/FirebaseConfig'; // Certifique-se de que o FirebaseConfig tem a exportação do "storage"
 import { collection, addDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Importar as funções necessárias do Firebase Storage
 import styled from 'styled-components';
 
-// Styled Components
+// Styled Components (mesmo código anterior)
+ /* Estilos aqui */ 
+// Demais styled components...
 const FormContainer = styled.div`
   max-width: 600px;
   margin: 0 auto;
@@ -89,7 +92,7 @@ const SuccessMessage = styled.p`
 
 // Component
 const CertificationsAndCoursesForm = () => {
-  const [certificates, setCertificates] = useState([{ name: '', institution: '', date: '' }]);
+  const [certificates, setCertificates] = useState([{ name: '', institution: '', date: '', image: null }]);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -100,8 +103,15 @@ const CertificationsAndCoursesForm = () => {
     setCertificates(updatedCertificates);
   };
 
+  const handleImageChange = (index, event) => {
+    const file = event.target.files[0];
+    const updatedCertificates = [...certificates];
+    updatedCertificates[index].image = file; // Armazena o arquivo da imagem no estado
+    setCertificates(updatedCertificates);
+  };
+
   const addCertificate = () => {
-    setCertificates([...certificates, { name: '', institution: '', date: '' }]);
+    setCertificates([...certificates, { name: '', institution: '', date: '', image: null }]);
   };
 
   const removeCertificate = (index) => {
@@ -109,10 +119,23 @@ const CertificationsAndCoursesForm = () => {
     setCertificates(updatedCertificates);
   };
 
+  const uploadImage = async (imageFile, index) => {
+    if (!imageFile) return null; // Se não houver imagem, retorna null
+
+    try {
+      const imageRef = ref(storage, `certificates/${certificates[index].name}_${Date.now()}`);
+      const snapshot = await uploadBytes(imageRef, imageFile);
+      const downloadURL = await getDownloadURL(snapshot.ref);
+      return downloadURL; // Retorna a URL da imagem
+    } catch (error) {
+      console.error('Erro ao fazer upload da imagem:', error);
+      throw new Error('Erro ao fazer upload da imagem');
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validação simples
     if (certificates.some(certificate => !certificate.name || !certificate.institution || !certificate.date)) {
       setError('Preencha todos os campos antes de enviar.');
       return;
@@ -122,13 +145,21 @@ const CertificationsAndCoursesForm = () => {
     setSuccess('');
 
     try {
-      // Adicionando ao Firestore
+      const certificatesWithImages = await Promise.all(
+        certificates.map(async (certificate, index) => {
+          const imageUrl = await uploadImage(certificate.image, index); // Faz upload da imagem e obtém a URL
+          return { ...certificate, image: imageUrl }; // Substitui o campo "image" pelo URL da imagem
+        })
+      );
+
+      // Adicionando ao Firestore, mas agora com a URL da imagem (não o arquivo)
       await addDoc(collection(db, 'certificates'), {
-        certificates, // Enviamos a lista completa de certificados/cursos
+        certificates: certificatesWithImages,
         createdAt: new Date(),
       });
+
       setSuccess('Certificados e cursos enviados com sucesso!');
-      setCertificates([{ name: '', institution: '', date: '' }]); // Reseta o formulário
+      setCertificates([{ name: '', institution: '', date: '', image: null }]); // Reseta o formulário
     } catch (err) {
       setError('Erro ao salvar certificados. Tente novamente.');
       console.error('Erro ao salvar certificados:', err);
@@ -166,6 +197,12 @@ const CertificationsAndCoursesForm = () => {
               value={certificate.date}
               onChange={e => handleInputChange(index, e)}
               required
+            />
+            <Label>Imagem (opcional):</Label>
+            <Input
+              type="file"
+              accept="image/*"
+              onChange={e => handleImageChange(index, e)}
             />
             <RemoveButton type="button" onClick={() => removeCertificate(index)}>
               Remover

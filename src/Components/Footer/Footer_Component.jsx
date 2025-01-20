@@ -15,7 +15,7 @@ const Footer = () => {
         </FooterLinks>
         <p>&copy; {new Date().getFullYear()} Joziane. Todos os direitos reservados.</p>
        
-<ContainerLogo> <p>Desenvolido por Welinson Macedo  </p><Logo src='/Logowm.png'/>WmDigitalSolutions</ContainerLogo>
+<ContainerLogo> <p>Desenvolido por Welinson Macedo  </p><Logo src='/Logowm.png'/>WM Infinity</ContainerLogo>
       </FooterContent>
     </FooterContainer>
   );

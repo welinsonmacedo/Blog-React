@@ -56,7 +56,12 @@ const ErrorMessage = styled.p`
   text-align: center;
   font-size: 18px;
 `;
-
+const Image = styled.img`
+width: 300px;
+object-fit: cover;
+display: block;
+margin: 0 auto;
+`;
 // Component
 const CertificationsList = () => {
   const [certificates, setCertificates] = useState([]);
@@ -99,6 +104,7 @@ const CertificationsList = () => {
       {certificates.map((certificate, index) => (
         <CertificateItem key={index}>
           <CertificateName>{certificate.name}</CertificateName>
+         
           <CertificateDetail><strong>Instituição:</strong> {certificate.institution}</CertificateDetail>
           <CertificateDetail><strong>Data de Conclusão:</strong> {new Date(certificate.date).toLocaleDateString()}</CertificateDetail>
         </CertificateItem>
